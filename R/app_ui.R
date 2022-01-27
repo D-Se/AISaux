@@ -21,6 +21,7 @@ app_ui <- function(request) {
           # id gives tabName of the currently-selected tab
           id = "tabs",
           s$menuItem("Dashboard", tabName = "dashboard", icon = icon("dashboard")),
+          s$menuItem("Field test", tabName = "test", icon = icon("bar-chart-o")),
           s$menuItem("Muscle Group View", icon = icon("th"), tabName = "mg"),
           s$menuItem("Exercise View", icon = icon("bar-chart-o"), tabName = "ev"
           ))
@@ -29,6 +30,9 @@ app_ui <- function(request) {
       body = s$dashboardBody(
         s$tabItems(
           s$tabItem("dashboard", mod_Home_ui("Home_ui_1")),
+          #s$tabItem("test", tags$title("Your Test"), h2("Test yourself")),
+          #conditionalPanel("input.m == 0", tags$b("blabla")
+          s$tabItem("test", mod_Survey_ui("Survey_ui_1")),
           s$tabItem("mg", mod_MuscleGroup_ui("MuscleGroup_ui_1")),
           s$tabItem("ev", mod_Exercises_ui("Exercises_ui_1")
           )

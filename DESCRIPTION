@@ -1,5 +1,5 @@
 Package: AISaux
-Title: PKG_TITLE
+Title: Interactive Applied Information Science
 Version: 0.0.0.9000
 Authors@R:
     c(person(given = "Donald",
@@ -12,12 +12,15 @@ Description: Auxiliary utilities for Applied Information Science book.
 License: GPL (>= 3)
 Imports: 
     attempt,
+    box,
     config (>= 0.3.1),
     DT,
     ggplot2,
     glue,
     golem (>= 0.3.1),
+    googlesheets4,
     htmltools,
+    pkgload,
     processx,
     shinipsum,
     shiny (>= 1.7.1),
@@ -27,9 +30,12 @@ Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.1.2
 Suggests: 
+    rmarkdown,
+    knitr,
     spelling,
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
 Language: en-US
 URL: https://github.com/D-Se/AISaux
 BugReports: https://github.com/D-Se/AISaux/issues
+VignetteBuilder: knitr

@@ -1,39 +1,40 @@
 #' The application User-Interface
 #' 
+#' 
+#' https://github.com/ConalMonaghan/Shiny-Survey-and-Feedback-Site/blob/master/UI
 #' @param request Internal parameter for `{shiny}`. 
 #'     DO NOT REMOVE.
 #' @import shiny
 #' @noRd
-app_ui <- function() {
+app_ui <- function(request) {
+  box::use(s = shinydashboard, sp = shinydashboardPlus) # package aliases
   tagList(
-    # Leave this function for adding external resources
     golem_add_external_resources(),
-    # Define this page as a dashboard page to signal we're using the     dashboard page format
-    shinydashboardPlus::dashboardPage(
-      
-      header = shinydashboardPlus::dashboardHeader(
-        title = "Fitbod Tracking Dashboard"
+    # start of UI
+    sp$dashboardPage(
+      header = sp$dashboardHeader(
+        title = "Applied Information Science",
+        titleWidth = 500
       ),
-      # Create our navigation menu that links to each of the tabs we defined
-      sidebar = shinydashboard::dashboardSidebar(
-        shinydashboard::sidebarMenu(
-          # Setting id makes input$tabs give the tabName of currently-selected tab
+      sidebar = s$dashboardSidebar(
+        s$sidebarMenu(
+          # id gives tabName of the currently-selected tab
           id = "tabs",
-          shinydashboard::menuItem("Dashboard", tabName = "dashboard", icon = icon("dashboard")),
-          shinydashboard::menuItem("Muscle Group View", icon = icon("th"), tabName = "mg"),
-          shinydashboard::menuItem("Exercise View", icon = icon("bar-chart-o"), tabName = "ev"
+          s$menuItem("Dashboard", tabName = "dashboard", icon = icon("dashboard")),
+          s$menuItem("Muscle Group View", icon = icon("th"), tabName = "mg"),
+          s$menuItem("Exercise View", icon = icon("bar-chart-o"), tabName = "ev"
           ))
       ),
-      # Show the appropriate tab's content in the main body of our dashboard when we select it
-      body = shinydashboard::dashboardBody(
-        shinydashboard::tabItems(
-          shinydashboard::tabItem("dashboard", mod_Home_ui("Home_ui_1")),
-          shinydashboard::tabItem("mg", mod_MuscleGroup_ui("MuscleGroup_ui_1")),
-          shinydashboard::tabItem("ev", mod_Exercises_ui("Exercises_ui_1")
+      # show UI elements on selection
+      body = s$dashboardBody(
+        s$tabItems(
+          s$tabItem("dashboard", mod_Home_ui("Home_ui_1")),
+          s$tabItem("mg", mod_MuscleGroup_ui("MuscleGroup_ui_1")),
+          s$tabItem("ev", mod_Exercises_ui("Exercises_ui_1")
           )
         ) 
       ),
-      title = "FitBod App Monitoring Dashboard"
+      title = "Applied Information Science"
     )
   )
 }

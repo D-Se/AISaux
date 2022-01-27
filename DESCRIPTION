@@ -1,0 +1,33 @@
+Package: AISaux
+Title: PKG_TITLE
+Version: 0.0.0.9000
+Authors@R:
+    c(person(given = "Donald",
+             family = "Seinen",
+             role = c("aut", "cre"),
+             email = "2869830202@qq.com",
+             comment = c(ORCID = "0000-0002-4343-5851"))
+  )
+Description: Auxiliary utilities for Applied Information Science book.
+License: GPL (>= 3)
+Imports: 
+    attempt,
+    config (>= 0.3.1),
+    DT,
+    ggplot2,
+    glue,
+    golem (>= 0.3.1),
+    htmltools,
+    processx,
+    shinipsum,
+    shiny (>= 1.7.1),
+    shinydashboard,
+    shinydashboardPlus
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.1.2
+Suggests: 
+    spelling,
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
+Language: en-US

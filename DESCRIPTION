@@ -1,5 +1,5 @@
 Package: AISaux
-Title: Interactive Applied Information Science
+Title: Interactive elements for Applied Information Science
 Version: 0.0.0.9000
 Authors@R:
     c(person(given = "Donald",
